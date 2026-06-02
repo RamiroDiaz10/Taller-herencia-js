@@ -1,26 +1,26 @@
 class Empleado{
   
-  constructor(nombre, cargo, salario ){
+    constructor(nombre, cargo, salario ){
       this.nombre = nombre;
       this.cargo = cargo
       this.salario = salario;
       this.activo = true; 
     }
         presentarse(){
-            console.log(`Hola, mi nombre es: ${this.nombre}, y soy ${this.cargo}`);
+            return `Hola, mi nombre es: ${this.nombre}, y soy ${this.cargo}`;
         }
 
         clacularSalarioAnual(){
-            console.log(`Salario anual es: $ ${this.salario} X 12 = $ ${this.salario * 12 }`);
+            return `Salario anual es: $ ${this.salario} X 12 = $ ${this.salario * 12 }`;
         }
 
         desactivar(){
             if(this.activo === true){
                 this.activo = false;
-                console.log("Empleado desactivado");
+                return "Empleado desactivado";
             }else {
                 this.activo = true;
-                console.log("Empleado activado");
+                return "Empleado activado";
 
             }
         }
@@ -31,7 +31,7 @@ class Empleado{
             cargo:${this.cargo}
             salario:${this.salario}
             activo:${this.activo}`;
-}
+        }
 }
 class Lider extends Empleado {
 
@@ -41,11 +41,11 @@ class Lider extends Empleado {
     }
 
     presentarEquipo (){
-        console.log(`♣ intgrantes del equipo: ${this.equipo.join(", ")}`)
+        return `♣ intgrantes del equipo: ${this.equipo.join(", ")}`
     }
     agregarMiembro(nombre){
         this.equipo.push(nombre);
-        console.log(`♠${nombre} fue agregado al equipo`)
+        return `♠${nombre} fue agregado al equipo`
     }
    info(){
         return `${super.info()}
@@ -61,31 +61,31 @@ let empleado5 = new Empleado("Jun", "analista", 400000);
 
 
 
-empleado1.presentarse();
-empleado2.presentarse();
-empleado1.clacularSalarioAnual();
+console.log(empleado1.presentarse());
+console.log(empleado2.presentarse());
+console.log(empleado1.clacularSalarioAnual());
 console.log(empleado1.info());
-empleado1.desactivar();
+console.log(empleado1.desactivar());
 console.log(empleado1.info());
-empleado1.desactivar();
+console.log(empleado1.desactivar());
 console.log(empleado1.info());
 
 let lider1 = new Lider("Gerardo", 10000000, equipo1 = [] );
 let lider2 = new Lider("Andres", 20000000, equipo2 = [] );
 
-lider1.agregarMiembro(empleado1.nombre);
-lider1.agregarMiembro(empleado2.nombre);
-lider1.presentarEquipo();
-lider1.clacularSalarioAnual();
-lider1.desactivar();
+console.log(lider1.agregarMiembro(empleado1.nombre));
+console.log(lider1.agregarMiembro(empleado2.nombre));
+console.log(lider1.presentarEquipo());
+console.log(lider1.clacularSalarioAnual());
+console.log(lider1.desactivar());
 
 console.log(lider1.info());
 
-lider2.agregarMiembro(empleado3.nombre);
-lider2.presentarEquipo();
+console.log(lider2.agregarMiembro(empleado3.nombre));
+console.log(lider2.presentarEquipo());
 console.log(lider2.info());
-lider2.agregarMiembro(empleado4.nombre);
-lider2.presentarEquipo();
+console.log(lider2.agregarMiembro(empleado4.nombre));
+console.log(lider2.presentarEquipo());
 
 let nomina = [];
 nomina.push(empleado1);
