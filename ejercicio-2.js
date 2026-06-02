@@ -78,8 +78,8 @@ console.log(pelicula1.ficha());
 console.log(pelicula2.ficha());
 
 let serie1 = new Serie("Avengers", "accion", 2000, 6 );
-let serie2 = new Serie("Avengers", "accion", 2000, 6 );
-let serie3 = new Serie("Avengers", "accion", 2000, 6 );
+let serie2 = new Serie("lili", "comedia", 2030, 66 );
+let serie3 = new Serie("Aparye", "terror", 2060, 7 );
 
 console.log(serie1.ficha());
 console.log(serie1.registrarEpisodios(5));
